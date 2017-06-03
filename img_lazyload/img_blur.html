@@ -1,0 +1,44 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<title>实现图片预加载功能</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="img_blur.css">
+<script src="jquery.min.js"></script>
+</head>
+
+<body class="doc">
+  <h1>实现图片预加载功能</h1>
+  <div class="main row">
+    <div class="col-md-6 col-xs-12">
+      <div class="post">
+        <div class="image-bg"  data-src="img/large1.jpg">
+          <img src="img/small1.png"/>
+        </div>
+        <p class="title">丸子头</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <div class="post">
+        <div class="image-bg"  data-src="img/large2.jpg">
+          <img  src="img/small2.png" />
+        </div>
+        <p class="title">Ice cream</p>
+      </div>
+    </div>
+    <div class="col-md-12 col-xs-12">
+      <div class="post">
+        <div class="image-bg"  data-src="img/large3.jpg">
+          <img width="80%" height="80%" src="img/small3.png" />
+        </div>
+        <p class="title">道姑头</p>
+      </div>
+    </div>
+  </div>
+<script src="img_blur.js"></script>
+</body>
+
+</html>
