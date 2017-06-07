@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>drag</title>
-	<style type="text/css">
-		.container{
-			position:absolute;
-			left:100px;
-			top:100px;
-			width:250px;
-			background-color: white;
-			border:solid black;
-			box-shadow: 2px 2px 4px #666666; 
-			-moz-box-shadow:2px 2px 4px #666666; 
-			-webkit-box-shadow:2px 2px 4px #666666;
-		}
-		.drag{
-			background-color: gray;
-			border-bottom:dotted black;
-			padding:3px;
-			font-family: sans-serif;
-			font-weight:bold;
-			text-align: center;
-			cursor:move;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="drag.css">
 </head>
 <body>
+	<header>
+		<img src="img/logo.png" alt="logo">
+		<p>angryyan</p>
+		<ul>
+			<li class="login"><a>登录</a></li>
+			<li><a href="###">非官方微博</a></li>
+			<li><a href="###">问题反馈</a></li>
+			<li><a href="###">关于</a></li>
+		</ul>
+	</header>
 	<div class="container">
 		<div class="drag" onmousedown="drag(this.parentNode, event);">拖动我</div>
-		<p>这是一个测试</p>
-		<p>测试测试</p>
+		<p>我是测试,我一直在你身边</p>
+		<p>测试测试，不离不弃</p>
 	</div>
+	<div class="panel">
+				<div class="login-header" onmousedown="drag(this.parentNode, event);">
+					<h1>Login</h1>
+					<img src="img/close.gif" alt="colse" class="close">
+				</div>
+				<div class="login-inpgrp">
+					<div class="err"></div>
+					<form>
+						<div class="login-input">
+							<input type="text" name="name" class="inp-item" placeholder="请输入用户名">
+						</div>
+						<div class="login-input">
+							<input type="password" name="pwd" class="inp-item" placeholder="请输入密码">
+						</div>
+						<span><a href="###">忘记密码</a></span><br/>
+						<input type="submit" name="login" value="登     录">
+					</form>
+				</div>
+				<div class="login-footer">
+					<p>还没有账号，立即去<a href="###">注册</a></p>
+				</div>
+			</div>
 	<script type="text/javascript" src="getScrollOffsets.js"></script>
 	<script type="text/javascript" src="drag.js"></script>
+	<script type="text/javascript" src="login.js"></script>
 </body>
 </html>

@@ -32,7 +32,7 @@ function drag(elementTopDrag, event){
     }
     //处理了这个事件，不让任何其他元素看到它
     if(event.stopPropagation) event.stopPropagation();      //取消事件传播  标准模式
-    else event.cancelBubble = ture;                         //取消事件传播  IE
+    else event.cancelBubble = true;                         //取消事件传播  IE
 
     if(event.preventDefault) event.preventDefault();        //取消默认操作  标准模式
     else event.returnValue = false;                         //取消默认操作  IE
@@ -50,7 +50,7 @@ function drag(elementTopDrag, event){
         elementTopDrag.style.left = (e.clientX + scroll.x - deltaX) + 'px';
         elementTopDrag.style.top = (e.clientY + scroll.y - deltaY) + 'px';
         if(e.stopPropagation) e.stopPropagation();      //取消事件传播  标准模式
-        else e.cancelBubble = ture;                         //取消事件传播  IE
+        else e.cancelBubble = true;                         //取消事件传播  IE
     }
 
     /**
@@ -71,6 +71,6 @@ function drag(elementTopDrag, event){
             elementTopDrag.releaseCapture();
         }
         if(e.stopPropagation) e.stopPropagation();      //取消事件传播  标准模式
-        else e.cancelBubble = ture;                     //取消事件传播  IE
+        else e.cancelBubble = true;                     //取消事件传播  IE
         }
 }
