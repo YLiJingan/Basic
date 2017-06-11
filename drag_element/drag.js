@@ -47,10 +47,23 @@ function drag(elementTopDrag, event){
         }
         //移动这个元素到当前鼠标的位置   通过滚动条的位置和初始地啊你时的偏移量来调整
         var scroll = getScrollOffsets();
-        elementTopDrag.style.left = (e.clientX + scroll.x - deltaX) + 'px';
-        elementTopDrag.style.top = (e.clientY + scroll.y - deltaY) + 'px';
+        var left = e.clientX + scroll.x - deltaX;
+        var top = e.clientY + scroll.y - deltaY;
+        if(left<0){
+            left = 0;
+        }else if(left>e.clientX + scroll.x - deltaX){
+            left = e.clientX + scroll.x - deltaX;
+        }
+        if(top<0){
+            top=0;
+        }else if(top>e.clientY + scroll.y - deltaY){
+            top = e.clientY + scroll.y - deltaY;
+        }
+        elementTopDrag.style.left = left + 'px';
+        elementTopDrag.style.top = top + 'px';
         if(e.stopPropagation) e.stopPropagation();      //取消事件传播  标准模式
         else e.cancelBubble = true;                         //取消事件传播  IE
+        document.documentElement.style.overflow = 'hidden';
     }
 
     /**
@@ -73,4 +86,5 @@ function drag(elementTopDrag, event){
         if(e.stopPropagation) e.stopPropagation();      //取消事件传播  标准模式
         else e.cancelBubble = true;                     //取消事件传播  IE
         }
+        document.documentElement.style.overflow = 'auto';
 }
