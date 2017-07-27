@@ -51,13 +51,13 @@ function drag(elementTopDrag, event){
         var top = e.clientY + scroll.y - deltaY;
         if(left<0){
             left = 0;
-        }else if(left>e.clientX + scroll.x - deltaX){
-            left = e.clientX + scroll.x - deltaX;
+        }else if(left>e.clientX  - elementTopDrag.offsetWidth){
+            left = e.clientX  - elementTopDrag.offsetWidth;
         }
         if(top<0){
             top=0;
-        }else if(top>e.clientY + scroll.y - deltaY){
-            top = e.clientY + scroll.y - deltaY;
+        }else if(top>e.clientY  - origY){
+            top = e.clientY  - origY;
         }
         elementTopDrag.style.left = left + 'px';
         elementTopDrag.style.top = top + 'px';
