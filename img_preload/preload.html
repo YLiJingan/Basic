@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>img_preload</title>
+	<style>
+		html,body{
+			width:100%;
+			height:100%;
+			box-sizing: border-box;
+			padding:0;
+			margin:0;
+		
+		}
+		.container{
+			text-align: center;
+			background-color:#fff;
+
+		}
+		.btn{
+			background-color: #ccc;
+			padding:8px;
+			margin-left:20px;
+			color:#fff;
+			text-decoration: none;
+		}
+		.container a:hover{
+			color:red;
+		}
+		.loading{
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			background-color: #eee;
+			text-align: center;
+			font-size: 30px;
+		}
+		.process{
+			margin-top:300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="http://seopic.699pic.com/photo/50053/7618.jpg_wh1200.jpg" width='800' alt='img'>
+		<p>
+			<a href='javascript:' class='btn' data-control='prev'>上一页</a>	
+			<a href='javascript:' class='btn' data-control='next'>下一页</a>
+		</p>
+	</div>
+	<div class='loading'><p class='process'>0%</p></div>
+	<script src="jquery.min.js"></script>
+	<script>
+		var imgs = [
+			'http://seopic.699pic.com/photo/50053/7607.jpg_wh1200.jpg',
+			'http://seopic.699pic.com/photo/50053/7606.jpg_wh1200.jpg',
+			'http://seopic.699pic.com/photo/50053/6805.jpg_wh1200.jpg',
+			'http://seopic.699pic.com/photo/50053/6808.jpg_wh1200.jpg',
+			'http://seopic.699pic.com/photo/50053/6809.jpg_wh1200.jpg',
+			'http://seopic.699pic.com/photo/50046/5214.jpg_wh1200.jpg',
+			'http://seopic.699pic.com/photo/50004/3686.jpg_wh1200.jpg'
+		];
+
+		var index = 0,
+			len = imgs.length,
+			count=0,
+			process = $('.process');
+
+		$('.btn').on('click',function(){
+			if($(this).data('control') === 'prev'){
+				index = Math.max(0,--index);
+			}else{
+				index = Math.min(len-1,++index);
+			}
+			document.title=(index+1) + '/' + len;
+			$('img').attr('src',imgs[index]);
+		})
+
+		$.each(imgs,function(i,src){
+			var imgObj = new Image();
+			$(imgObj).on('load error',function(){
+				process.html(Math.round((count+1)/len *100) + '%');
+				if(count >= len-1){
+					$('.loading').hide();
+					document.title = '1/' + len;
+				}
+				count++;
+			});
+			imgObj.src = src;
+		});
+	</script>
+</body>
+</html>
