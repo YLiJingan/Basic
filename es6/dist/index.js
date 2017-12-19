@@ -2,15 +2,33 @@
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var a = 1; //es6声明方式
-console.log(a);
+{
+    var a = 1; //es6声明方式
+    var b = 2;
+}
+//console.log(a);                  //Uncaught ReferenceError: a is not defined
+console.log(b);
+
+function aa() {
+    console.log('I am outside');
+}
+
+(function () {
+    var aa = undefined;
+    if (false) {
+        var _aa = function _aa() {
+            console.log('I am inside');
+        };
+    }
+    aa();
+})();
+
+aa();
 
 /*从数组和对象中提取值，对变量进行赋值，这种称为解构。*/
-var b = '111',
-    c = '222'; //数组的解构赋值  
-
-console.log(b);
-console.log(c);
+// let [b,c] = ['111','222'];        //数组的解构赋值  
+// console.log(b);
+// console.log(c);
 
 var _foo$bar = { foo: 'angryyan', bar: '颜小乖' },
     foo = _foo$bar.foo,

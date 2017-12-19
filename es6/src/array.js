@@ -1,6 +1,8 @@
 /**
  * json数组格式
  */
+import 'babel-ployfill';
+
 let json = {
     '0': 'aaa',
     '1': 'bbb',
