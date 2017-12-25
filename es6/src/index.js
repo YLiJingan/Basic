@@ -19,23 +19,24 @@ function aa(){
 })();
 
 aa();
-
-{
-    let t =f();
-    t = t* t + 1;
-}                       //块级作用域将多个操作封装在一起，没有返回值。
-
-let x = do {
-    let t = f();
-    t* t + 1;
-};
+// {
+//     let t =f();
+//     t = t* t + 1;
+// }                       //块级作用域将多个操作封装在一起，没有返回值。
 
 /*从数组和对象中提取值，对变量进行赋值，这种称为解构。*/
-// let [b,c] = ['111','222'];        //数组的解构赋值  
-// console.log(b);
-// console.log(c);
+let [B,c] = ['111','222'];        //数组的解构赋值  
+console.log(B);
+console.log(c);
+/*本质上，这种写法是‘模式匹配‘，只要等号两边的模式相同，左边的变量会被赋予对应的值。*/
+/*不完全解构*/
+console.log('不完全解构:');
+let [X,Y] = [1,2,3];
+console.log(X);
+console.log(Y);
 
-let{foo,bar} = {foo:'angryyan',bar:'颜小乖'};   //对象的解构赋值
+
+let{foo,bar} = {foo:'angryyan',bar:'颜小乖'};   //对象的解构赋值，foo是匹配的模式，baz才是变量，真正被赋值是变量baz，而不是模式foo
 console.log(foo+bar);
 
 /**
@@ -54,3 +55,9 @@ console.log(x);
 console.log(s);
 console.log(v);
 console.log(f);
+
+//用途    
+let xx = 1;
+let yy = 2;
+[xx,yy] = [yy,xx];
+console.log([xx,yy]);
