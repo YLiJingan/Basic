@@ -51,3 +51,40 @@ for(let item of arr5.entries()){    //输出key:value形式
 /*手动循环 entries*/
 let list = arr5.entries();
 console.log(list.next().value);
+
+/*map 输出个数与输入个数一样*/
+// let result = arr5.map(function(itm){
+//     return item*2;
+// })
+/*使用箭头函数*/
+let result = arr5.map(item=>item*2)
+console.log(result);
+
+/*reduce 输出一个结果*/
+let result2 = arr5.reduce(function(tmp,item,index){
+    if(index!= this.length-1){
+        return temp +item;
+    }else{
+        return (temp+item)/this.length;
+    }
+})
+console.log(result2);
+
+
+/*filter 筛选*/
+// let result3 = arr5.filter(item=>{  //输出能被3整除的数
+//     if(item%3 == 0){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// })
+
+let result3 = arr5.filter(item=>item%3 == 0);    //箭头函数简写
+consoel.log(result3);
+
+
+/*forEach*/
+arr5.forEach((item,index)=>{
+    console.log(index+':'+item);
+})
