@@ -3,17 +3,16 @@
  */
 
  class Coder{
+     constructor(a, b) {      //class参数
+         this.a = a;
+         this.b = b;
+     }
     name(val){
         console.log(val);
         return val;
     }
     skill(val){
         console.log(this.name('yanxiaoguai')+ ':'+'skill--'+val);
-    }
-
-    constructor(a,b){      //class参数
-        this.a = a;
-        this.b = b;
     }
 
     add(){

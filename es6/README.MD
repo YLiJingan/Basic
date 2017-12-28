@@ -115,7 +115,36 @@ Rest Parameter必须是最后一个参数。
 不传该参数使用默认参数，出入该参数覆盖默认参数。	
 
 ### 数组的扩展	--array.js 	
-* map reduce filter forEach
+* map reduce filter forEach		
+
+### ES6 class  --class.js
+* class关键字,构造器constructor和类分开了。				
+* class里直接加方法，不需要再使用prototype。方法直接写方法名即可，不需要加function	
+* 默认是严格模式	
+* 如果没有显示定义constructor,一个空的constructor方法会被默认添加。constructor方法默认返回实例对象(即this)		
+
+
+* 继承
+	extends		
+	* 子类必须在constructor方法中调用super方法，否则新建实例时会报错。	
+	* 在子类的构造函数中，只有调用super之后，才可以使用this关键字。	
+
+* 面向对象应用-react	
+	组件化，每一个组件就是一个Class	
+	JSX			
+
+### JSON  --json.js
+*json标准写法:只能用双引号，所有的key都必须用引号包起来*		
+* JSON对象
+	JSON.stringify()	
+	JSON.parse()		
+* 简写(key和value一样，方法)
+
+
+### Promise对象  --promise.js
+* 异步请求、同步请求
+	* 异步：可以同时进行多个操作，操作之间互不影响  ajax     代码复杂
+	* 同步：同时只能做一件事，必须等前边的完成之后才能进行    代码简单
 
 
 
