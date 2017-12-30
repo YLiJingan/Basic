@@ -146,6 +146,14 @@ Rest Parameter必须是最后一个参数。
 	* 异步：可以同时进行多个操作，操作之间互不影响  ajax     代码复杂
 	* 同步：同时只能做一件事，必须等前边的完成之后才能进行    代码简单
 
+### generator生成器  --generator.js	
+* Generator函数是一个普通函数，但是有两个特征。		
+	* function关键字与函数名之间有一个星号；
+	* 函数体内部使用yield表达式，定义不同的内部状态	
+*执行generator.js一直报错，需要安装babel-plugin-transform-runtime*		
+
+
+
 
 
 
